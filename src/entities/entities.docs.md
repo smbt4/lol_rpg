@@ -12,11 +12,39 @@ Aktuell leer. Vorgesehen als mögliche gemeinsame Basisklasse für Spielfiguren 
 Zeilen: 0, Imports: 0, Attribute: 0, Funktionen: 0
 
 
-# Monster.js
+# Monster.js (Klasse)
 
-Aktuell leer. Vorgesehen für die Implementierung von Monstern und deren Verhalten.
+Ein Monster mit eigenem Typ (Schleim, Goblin, Fledermaus, Irrlicht; Werte in `constants.monsterTypes`). Wandert im Ruhezustand zufällig um seinen Spawnpunkt. Kommt der Spieler näher als `aggroRange`, wechselt es in den Verfolgungsmodus: Nahkampf-Monster laufen auf den Spieler zu und greifen an, sobald sie direkt neben ihm stehen; das Irrlicht schießt aus der Distanz. Wird ein Monster getroffen, verfolgt es den Spieler ebenfalls. Position und visuelle Position in Kacheln.
 
-Zeilen: 0, Imports: 0, Attribute: 0, Funktionen: 0
+## Konstruktor
+
+`constructor(type, x, y)` → `void`
+
+## Funktionen
+
+- `takeDamage(amount, now)` → `void`
+- `update(now, world)` → `void` (world = Game-Instanz)
+- `draw(ctx, camX, camY, tileSize, now)` → `void`
+
+
+# Projectile.js (Klasse)
+
+Zielsuchendes Geschoss: Magieball des Spielers oder Schuss eines Irrlichts. Fliegt in Kachel-Koordinaten auf die aktuelle Position seines Ziels zu und setzt `hit`, wenn es ankommt.
+
+## Funktionen
+
+- `update(dt)` → `void`
+- `draw(ctx, camX, camY, tileSize)` → `void`
+
+
+# FloatingText.js (Klasse)
+
+Kurz aufsteigender Text für Schadenszahlen, EP-Gewinne, Level-ups und das „!“ beim Entdecken des Spielers.
+
+## Funktionen
+
+- `update(dt)` → `void`
+- `draw(ctx, camX, camY, tileSize)` → `void`
 
 
 # Player.js (Klasse)
