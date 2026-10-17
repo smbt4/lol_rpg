@@ -21,7 +21,9 @@ Das Projekt ist ein modulares Vanilla-JavaScript-RPG. Der Quellcode ist unter `s
 ### entities/
 
 - **Entity.js**: Aktuell leer; vorgesehen als mögliche gemeinsame Basisklasse für Entities.
-- **Monster.js**: Aktuell leer; vorgesehen für die Implementierung von Monstern.
+- **Monster.js**: Monster, die umherwandern und den Spieler in der Nähe verfolgen und angreifen.
+- **Projectile.js**: Zielsuchende Geschosse (Magieball des Spielers, Schüsse der Irrlichter).
+- **FloatingText.js**: Aufsteigende Texte für Schaden, EP und Level-ups.
 - **Player.js**: Repräsentiert den Spieler und verwaltet dessen Position und Darstellung.
 
 ### world/

@@ -25,8 +25,8 @@ export class Input {
         window.addEventListener('keydown', (e) => {
             this.keys[e.key] = true;
 
-            if (e.key === 'Control') {
-                this.onTap();
+            if (e.key === 'Control' || e.key === ' ') {
+                if (typeof this.onTap === 'function') this.onTap();
             }
 
             if (typeof this.onInteraction === 'function') {
